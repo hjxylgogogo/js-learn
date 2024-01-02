@@ -55,6 +55,9 @@ let b = {
 let c = {
     name3: 'c'
 }
+Object.defineProperty(c,"name3",{
+    enumerable:false
+})
 Object.setPrototypeOf(c, b)
 Object.setPrototypeOf(b, a)
 console.log(c.name1);
@@ -63,5 +66,22 @@ console.log(c.name1);
 in操作符：
 1.单独使用
 --单独使用时，in操作符会在可以通过对象访问指定属性时返回true，无论该属性时在实例上还是在原型上
-2.在for-in循环中使用
+2.在for-in循环中使用,返回实例的所有属性和方法，不包括不可枚举的
+
+Object.keys() 只返回属于实例的属性和方法
+Object.getOwnPropertyNames()返回实例的所有属性和方法包括不可枚举的
+
+*/
+let d = {
+    name1:1,
+    name2:2,
+    name3:3
+}
+Object.setPrototypeOf(d, c)
+for(let i in d){
+    console.log(i);
+}
+
+/*
+由于以**符号**为键的属性没有名称的概念，因此Object.getOwnPropertySymbols()方法出现了，返回所有符号为键的属性和方法
 */
