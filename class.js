@@ -41,3 +41,15 @@ console.log(p2);
 把类当成特殊函数：
 声明一个类之后，通过typeof操作符检测类标识符，表明它是一个函数 410页
 */
+
+function a(root){
+    
+    
+}
+
+let root = {
+    value:'1',
+    next:null
+}
+
+a(root.next)

@@ -85,3 +85,15 @@ for(let i in d){
 /*
 由于以**符号**为键的属性没有名称的概念，因此Object.getOwnPropertySymbols()方法出现了，返回所有符号为键的属性和方法
 */
+
+/*对象迭代
+es2017增加了两个静态方法
+Object.values()返回对象值得数组
+Object.entries()返回对象键/值对数组
+符号属性会被忽略
+*/
+
+function P(){}
+P.prototype = {}
+let f = new P()
+console.log(f);
